@@ -2,8 +2,6 @@ import { Client, GatewayIntentBits, Collection, Collector, Partials } from "disc
 import fs from 'fs';
 import dotenv from 'dotenv'
 import './events/interactionCreate.js'
-import './handlers/events.js'
-import { ready } from "./events/ready.js";
 import { readdir } from 'fs';
 import { promisify} from 'util';
 const promiseBasedReaddir = promisify(readdir);
@@ -29,19 +27,16 @@ export const client = new Client({
     }
     catch (err) {
         console.error(`Error loading event: ${err}`);
-  
     }
     const events = files.filter(file=>file.endsWith('.js'));
     console.log(events)
-    for(const file of events)
-    {
+    for(const file of events){
         console.log(`event file name is ${file}`);
-        const event = (await import(`./events/${file}`)).default;
-            console.log(event)
             const eventName = file.split('.')[0];
             console.log(eventName)
+            const event = (await import(`./events/${file}`)).default;
             client.on(eventName, event.bind(null,client));
-            console.log(`${success} Loaded event ${eventName}`);
+            console.log(`Loaded event ${eventName}`);
         }
 
 
@@ -54,7 +49,7 @@ client.once('ready', () => {
 
 
 client.login(process.env.TOKEN)
-// interactionCreate(client)
+//interactionCreate(client)
 
 
 
