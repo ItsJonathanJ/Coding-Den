@@ -1,0 +1,39 @@
+{
+  "name": "forestbotts",
+  "version": "0.0.1",
+  "description": "Forestbot is a connection between the Discord and the Minecraft server.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForestblockMC/forestbotTS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ForestblockMC/forestbotTS/issues"
+  },
+  "homepage": "https://github.com/ForestblockMC/forestbotTS#readme",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.1",
+    "ascii-table": "^0.0.9",
+    "chalk": "^5.0.1",
+    "discord.js": "^14.2.0",
+    "dotenv": "^16.0.1",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7",
+    "rest": "^2.0.0",
+    "ts-node": "^10.9.1",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "@types/mysql": "^2.15.21"
+  }
+}
