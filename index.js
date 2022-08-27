@@ -35,6 +35,7 @@ export const client = new Client({
             const eventName = file.split('.')[0];
             console.log(eventName)
             const event = (await import(`./events/${file}`)).default;
+            console.log(event)
             client.on(eventName, event.bind(null,client));
             console.log(`Loaded event ${eventName}`);
         }
